@@ -13,11 +13,13 @@
   Model-View-Controller构成其核心，并以Facade模式加以封装，以单例门面的形式  
   对外提供核心服务，如Proxy操作，Command操作以及Mediator操作，他们均由Facade  
   单例统一进行调度。
+
   2. 客户端初始化时须对Mediator，Command，Proxy进行注册，以表明各自感兴趣的  
   消息（观察者模式中的订阅）。用户输入数据到View Components后，由Mediator  
   通知观察者Command数据更新（观察者模式中的发布），Command调用Proxy完成真正  
   的业务逻辑操作，完成后通知感兴趣的观察者Mediator（观察者模式中的发布）将  
   数据更新到View Components，完成整个数据流动处理过程。
+
   3. 该框架大量用到了设计模式，包括：
      1. 观察者模式：观察者模式是整个框架所使用的核心模式，其发布-订阅的机制  
      奠定了整个框架解耦的基础。
